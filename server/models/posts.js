@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const uuid = require("uuid");
 
 // Creating Schema for Posts
 const PostSchema = new Schema({
@@ -20,7 +19,11 @@ const PostSchema = new Schema({
     url: {
         type: String,
         required: true,
-        default: "/"+uuid()
+    },
+    DateCreatd: {
+        type: Date,
+        required: true,
+        default: Date.now
     }
 });
 

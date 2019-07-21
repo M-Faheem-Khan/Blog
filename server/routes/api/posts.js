@@ -46,16 +46,13 @@ router.get("/:url", (request,response) => {
 
 // Saves Post to database
 router.post("/create", (request, response) => {
-    console.log(request.body)
     let data = {
         title: request.body.title,
         image: request.body.image,
-        content: request.body.image,
+        content: request.body.text,
         url: uuidv5(request.body.title, uuidv5.URL)
     }
-
-    console.log(data)
-
+    console.log("SAVING")
     const newPost = new Post(data);
     newPost.save().then(() => {
         response.status(200).json({

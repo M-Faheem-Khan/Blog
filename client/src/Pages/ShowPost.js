@@ -1,6 +1,8 @@
 import React from 'react';
 // Components
 import AppNavbar from '../Components/AppNavbar'; // Navbvar
+// For HTML Rednering
+import { Markup } from 'interweave';
 
 // Styles
 import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,14 +49,14 @@ class Posts extends React.Component {
 				<div>
 					<AppNavbar />
 					<div className="container">
-						{console.log(post_info)}
 						<div className="justify-content-start">
 							<center>
 								<img src={post_info.image} style={style.ImageStyles}/>
 							</center>
-							<div className="card-body">
+							<div style={style.TextWrappingStyles}>
 								<h5 className="card-title">{post_info.title}</h5>
-								<p className="card-text ">{post_info.content}</p>
+								{/* <p className="card-text ">{post_info.content}</p> */}
+								<Markup content={post_info.content} />
 								<a href="/" className="btn btn-outline-primary">Home</a>
 							</div>
 						</div>
@@ -70,7 +72,10 @@ const style = {
 		width: "100%",
 		height: "70%",
         marginBottom: "7px"
-    }
+	},
+	TextWrappingStyles: {
+		wordWrap: "break-word"
+	}
 }
 
 export default Posts;
