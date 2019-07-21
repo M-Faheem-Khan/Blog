@@ -25,18 +25,38 @@ class Editor extends React.Component {
     }
 
     // onclick send the data back the the database
+    createPost(e){
+        e.preventDefault();
+        if (this.state.text.length < 100){
+            alert("Please Add more content")
+        } else {
+            let data = {
+                "title": this.state.title,
+                "image": this.state.image,
+                "text": this.state.text
+            }
+            fetch("http://localhost:5000/create", {
+                method: "POST", 
+                body: JSON.stringify(data)
+            }).then((response) => {
+                alert(response.json());
+                return response.json();
+            }).then((response) => {
+                window.location.href = "http://localhost:3000/"
+            });
+        }
+    }
   
     render() {
         return (
             <div className="container">
                 <Form>
-
-                <div className="justify-content-start">
-                    <ReactQuill value={this.state.text} onChange={this.handleChange} />
-                    <Input style={style.ButtonStyles} onChange={this.handleImageChange.bind(this)} type="text" name="title" placeholder="Title" required/>
-                    <Input style={style.ButtonStyles} onChange={this.handleImageChange.bind(this)} type="text" name="image" placeholder="Title Image URL" required/>
-                    <Button style={style.ButtonStyles} outline color="primary">Post</Button>
-                </div>
+                    <div className="justify-content-start">
+                        <ReactQuill value={this.state.text} onChange={this.handleChange} />
+                        <Input style={style.ButtonStyles} onChange={this.handleImageChange.bind(this)} type="text" name="title" placeholder="Title" required/>
+                        <Input style={style.ButtonStyles} onChange={this.handleImageChange.bind(this)} type="text" name="image" placeholder="Title Image URL" required/>
+                        <Button style={style.ButtonStyles} onClick={this.createPost.bind(this)} outline color="primary" >Post</Button>
+                    </div>
                 </Form>
             </div>
         );
