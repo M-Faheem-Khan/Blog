@@ -26,7 +26,6 @@ class Editor extends React.Component {
 
     // onclick send the data back the the database
     createPost(e){
-        e.preventDefault();
         if (this.state.text.length < 100){
             alert("Please Add more content")
         } else {
@@ -35,13 +34,18 @@ class Editor extends React.Component {
                 "image": this.state.image,
                 "text": this.state.text
             }
-            fetch("http://localhost:5000/create", {
-                method: "POST", 
+            console.log(data)
+            fetch("http://localhost:5000/api/posts/create", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify(data)
             }).then((response) => {
-                alert(response.json());
                 return response.json();
             }).then((response) => {
+                console.log(response)
                 window.location.href = "http://localhost:3000/"
             });
         }

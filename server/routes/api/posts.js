@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const uuidv5 = require("uudi/v5")
+const express = require("express"); // server
+const router = express.Router(); // routes
+const uuidv5 = require("uuid/v5"); // for urls
 
 // Schema Models
 const Post = require("../../models/posts"); // Posts Schema model
@@ -45,7 +45,8 @@ router.get("/:url", (request,response) => {
 });
 
 // Saves Post to database
-router.post("/ceate", (request, response) => {
+router.post("/create", (request, response) => {
+    console.log(request.body)
     let data = {
         title: request.body.title,
         image: request.body.image,
@@ -53,10 +54,12 @@ router.post("/ceate", (request, response) => {
         url: uuidv5(request.body.title, uuidv5.URL)
     }
 
+    console.log(data)
+
     const newPost = new Post(data);
-    Post.save().then((response) => {
+    newPost.save().then(() => {
         response.status(200).json({
-            "success": true
+            "success": true,
         });
     }).catch((error) => {
         response.status(404).json({
