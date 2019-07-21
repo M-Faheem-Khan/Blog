@@ -12,7 +12,6 @@ class Content extends Component {
                         <img className="card-img-top" src={this.props.post_info.image}/>
                         <div className="card-body">
                             <h5 className="card-title">{this.props.post_info.title}</h5>
-                            <p className="card-text ">{this.props.post_info.Content}</p>
                             <a href={this.props.post_info.url} className="btn btn-outline-primary">Read More</a>
                         </div>
                     </div>

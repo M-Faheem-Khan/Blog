@@ -13,8 +13,8 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" component={Homepage} /> {/* Show All Posts */}
+      <Route exact path="/post/create" component={BlogPost}/>
       <Route path="/:post_id" component={ShowPost} /> {/* Show Single Post */}
-      <Route path="/post" component={BlogPost}/>
     </Switch>
   );
 }
