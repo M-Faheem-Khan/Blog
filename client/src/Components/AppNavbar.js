@@ -25,7 +25,7 @@ class AppNavbar extends Component{
                                     <NavLink href="/">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/">Post</NavLink>
+                                    <NavLink href="/post">Post</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="https://github.com/M-Faheem-Khan/Blog">Github</NavLink>
