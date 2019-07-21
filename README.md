@@ -8,6 +8,4 @@ This is a simple Blogging Platform that deletes all the every 24 Hours(Server Ti
  - Working on allowing users to create a new posts
 
 ## TODO
- - delete all posts after 24 hours
- - Finish editor that allows users to add posts
  - Upload images for the title image
