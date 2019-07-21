@@ -8,4 +8,7 @@ This is a simple Blogging Platform that deletes all the every 24 Hours(Server Ti
  - Working on allowing users to create a new posts
 
 ## TODO
- - Upload images for the title image
+ - Reset Database / Create backups for each day
+ - Create api to fetch older posts
+ - Add Author input
+ - Possibly move database to firebase
