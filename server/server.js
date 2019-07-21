@@ -30,7 +30,6 @@ mongoose.set('useNewUrlParser', true);
 app.use('/uploads', express.static('uploads'));
 
 // Adding Routes
-app.use("/api/profile", require("./routes/api/profile")); // CRUD for Profile
 app.use("/api/posts", require("./routes/api/posts")); // Read function setup
 
 // listen on port 5000

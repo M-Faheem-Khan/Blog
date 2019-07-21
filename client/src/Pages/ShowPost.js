@@ -55,10 +55,10 @@ class Posts extends React.Component {
 							</center>
 							<div style={style.TextWrappingStyles}>
 								<h5 className="card-title">{post_info.title}</h5>
-								{/* <p className="card-text ">{post_info.content}</p> */}
 								<Markup content={post_info.content} />
 								<a href="/" className="btn btn-outline-primary">Home</a>
 							</div>
+							<br/>
 						</div>
 					</div>
 				</div>
