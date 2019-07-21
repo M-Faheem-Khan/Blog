@@ -19,16 +19,22 @@ class App extends React.Component {
 	
 	componentWillMount(){
 		// fetch content from server in the mean show loading
-		fetch("http://localhost:5000/api/posts/all").then((response) => {
+		fetch("http://localhost:5000/api/posts/all", {method: "GET"}).then((response) => {
 			return response.json()
 		}).then((response) => {
 			response = response.data
-			console.log(response)
-			// setting the state
-			this.setState({
-				posts: response,
-				posts_len: 1
-			});
+			if (response.length >= 1){
+
+				// setting the state
+				this.setState({
+					posts: response,
+					posts_len: 1
+				});
+			} else {
+				this.setState({
+					posts_len: -1
+				});
+			}
 		}).catch((error) => {
 			// logging the error
 			console.log(error);
@@ -47,8 +53,18 @@ class App extends React.Component {
 					</center>
 				</div>
 			)
+		} else if (this.state.posts_len === -1) {
+			return (
+				<div>
+					<center>
+						<AppNavbar />
+						<div className="container">
+							204 - Post Not Found
+						</div>
+					</center>
+				</div>
+			)
 		} else {
-
 			return (
 				<div>
 					<AppNavbar />
