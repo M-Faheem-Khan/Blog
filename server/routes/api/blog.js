@@ -13,7 +13,7 @@ router.get("/blog/status", (request, response) => {
 
 // Gets all documents in database
 router.get("/blog/all", (request, response) => {
-    Blog.find({}).sort({DateCreated: 1}).then((docs) => {
+    Blog.find({}).sort({DateCreated: -1}).then((docs) => {
         response.status(200).json({
             status: 200,
             Response: "OK",
