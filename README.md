@@ -9,3 +9,4 @@ This is a simple Blogging Platform that deletes all the every 24 Hours(Server Ti
 
 ## TODO
 - Comment Section
+- Up vote / down vote post
