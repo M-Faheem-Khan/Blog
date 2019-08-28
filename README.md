@@ -5,8 +5,10 @@ This is a simple Blogging Platform that deletes all the every 24 Hours(Server Ti
 
 ## Current State
  - You can view all posts
- - Working on allowing users to create a new posts
+ - Create new posts
 
 ## TODO
 - Comment Section
 - Up vote / down vote post
+- Sort by new Post
+- Add infinte scrolling
