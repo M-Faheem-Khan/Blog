@@ -6,6 +6,7 @@ This is a simple Blogging Platform that deletes all the every 24 Hours(Server Ti
 ## Current State
  - You can view all posts
  - Create new posts
+ - Create a firebase version
 
 ## TODO
 - Comment Section
