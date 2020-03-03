@@ -3,13 +3,8 @@
 
 This is a simple Blogging Platform that deletes all the every 24 Hours(Server Time - Not 24 hours for each post) created using the MERN Stack.
 
-## Current State
- - You can view all posts
- - Create new posts
- - Create a firebase version
-
-## TODO
-- Comment Section
-- Up vote / down vote post
-- Sort by new Post
-- Add infinte scrolling
+![alt text](https://github.com/M-Faheem-Khan/Blog/blob/master/Images/1.png "Homepage")
+![alt text](https://github.com/M-Faheem-Khan/Blog/blob/master/Images/2.png "Homepage")
+![alt text](https://github.com/M-Faheem-Khan/Blog/blob/master/Images/3.png "Homepage")
+![alt text](https://github.com/M-Faheem-Khan/Blog/blob/master/Images/4.png "Homepage")
+![alt text](https://github.com/M-Faheem-Khan/Blog/blob/master/Images/5.png "Homepage")
